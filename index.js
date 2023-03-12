@@ -22,7 +22,7 @@ app.get("/initialize", function(req, res) {
         path: "/transaction/initialize",
         method: "POST",
         headers: {
-            Authorization: `Bearer ${process.env.API_KEY}`,
+            Authorization: `Bearer sk_test_749de3c93030d915483760f6c35057806d891c3d`,
             "Content-Type": "application/json",
         },
     };
