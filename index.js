@@ -22,7 +22,7 @@ app.get("/initialize", function(req, res) {
         path: "/transaction/initialize",
         method: "POST",
         headers: {
-            Authorization: `Bearer sk_test_749de3c93030d915483760f6c35057806d891c3d`,
+            Authorization: `Bearer ${process.env.PAYSTACK_KEY}`,
             "Content-Type": "application/json",
         },
     };
@@ -54,7 +54,7 @@ app.get("/verify", function(req, res) {
         path: `/transaction/verify/${req.query.verification_id}`,
         method: "GET",
         headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_PAYSTACK_KEY}`,
+            Authorization: `Bearer ${process.env.PAYSTACK_KEY}`,
         },
     };
 
@@ -84,7 +84,7 @@ app.get("/list_transaction", function(req, res) {
         path: "/transaction",
         method: "GET",
         headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_PAYSTACK_KEY}`,
+            Authorization: `Bearer ${process.env.PAYSTACK_KEY}`,
         },
     };
 
@@ -108,6 +108,4 @@ app.get("/list_transaction", function(req, res) {
     list_transaction.end();
 });
 
-app.listen(process.env.port || 3006, () =>
-    console.log(`Database name is ${process.env.API_KEY}`)
-);
+app.listen(process.env.port || 3006, () => console.log(`app is running`));
