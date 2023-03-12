@@ -8,7 +8,7 @@ app.use(cors());
 app.get("/initialize", function(req, res) {
     const params = JSON.stringify({
         email: req.query.email,
-        amount: req.query.amount,
+        amount: req.query.amount * 100,
         metadata: {
             custom_field: {
                 full_name: req.query.full_name,
