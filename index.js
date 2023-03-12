@@ -43,4 +43,4 @@ app.get("/initialize", function(req, res) {
     reqPaystack.end();
 });
 
-app.listen(3006, () => console.log("app is running"));
+app.listen(process.env.port || 3006, () => console.log("app is running"));
